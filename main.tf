@@ -9,8 +9,6 @@ terraform {
   }
 }
 
-
-
 provider "aws" {
 }
 
@@ -19,6 +17,11 @@ resource "aws_vpc" "example" {
 }
 
 resource "aws_instance" "example" {
+  instance_type  = "t2.micro"
+  ami            = "ami-0d359437d1756caa8"
+}
+
+resource "aws_instance" "example2" {
   instance_type  = "t2.micro"
   ami            = "ami-0d359437d1756caa8"
 }
